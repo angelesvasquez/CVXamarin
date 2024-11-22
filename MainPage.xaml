@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="app_cv.MainPage"
+             BackgroundColor="#F1F1F1">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Estilos para el encabezado -->
+            <Style x:Key="HeaderStyle" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#003366" />
+                <!-- Azul Marino -->
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="Margin" Value="0,0,0,15" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <!-- Estilo para el texto del encabezado -->
+            <Style x:Key="HeaderTextStyle" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <!-- Estilo para el nombre -->
+            <Style x:Key="NameStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+                <!-- Dorado -->
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <!-- Estilo para la posición -->
+            <Style x:Key="PositionStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <!-- Estilos para las secciones -->
+            <Style x:Key="SectionTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="#003366" />
+                <!-- Azul Marino -->
+                <Setter Property="Margin" Value="10,20,10,10" />
+            </Style>
+
+            <Style x:Key="SubSectionTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="#003366" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+
+            <Style x:Key="ContentTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="#555555" />
+                <Setter Property="Margin" Value="0,0,0,10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <!-- Encabezado -->
+            <StackLayout Style="{StaticResource HeaderStyle}">
+                <StackLayout Style="{StaticResource HeaderTextStyle}">
+                    <Label Text="Lucas Sánchez" Style="{StaticResource NameStyle}" />
+                    <Label Text="DESARROLLADOR DE SOFTWARE" Style="{StaticResource PositionStyle}" />
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Sección de Información Personal -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="INFORMACIÓN PERSONAL" Style="{StaticResource SectionTitleStyle}" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <Label Text="Edad: 29 años" Style="{StaticResource ContentTextStyle}" />
+                <Label Text="Ciudad: Barcelona, España" Style="{StaticResource ContentTextStyle}" />
+                <Label Text="Correo Electrónico: lucas.sanchez@email.com" Style="{StaticResource ContentTextStyle}" />
+                <Label Text="Teléfono: +34 612 345 678" Style="{StaticResource ContentTextStyle}" />
+            </StackLayout>
+
+            <!-- Sección de Experiencia Laboral -->
+            <StackLayout BackgroundColor="#F2F2F2" Padding="15" Margin="10">
+                <Label Text="EXPERIENCIA LABORAL" Style="{StaticResource SectionTitleStyle}" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+
+                <!-- Primer puesto -->
+                <StackLayout Margin="0,10,0,20">
+                    <Label Text="Desarrollador Backend" Style="{StaticResource SubSectionTitleStyle}" />
+                    <Label Text="Madrid, España | 2021 - Actualidad" Style="{StaticResource ContentTextStyle}" />
+                    <Label Text="• Desarrollo de APIs con Node.js y Express." Style="{StaticResource ContentTextStyle}" />
+                    <Label Text="• Gestión de bases de datos SQL y NoSQL." Style="{StaticResource ContentTextStyle}" />
+                    <Label Text="• Implementación de microservicios y Docker." Style="{StaticResource ContentTextStyle}" />
+                </StackLayout>
+
+                <!-- Segundo puesto -->
+                <StackLayout Margin="0,10,0,20">
+                    <Label Text="Desarrollador Full Stack" Style="{StaticResource SubSectionTitleStyle}" />
+                    <Label Text="Madrid, España | 2018 - 2021" Style="{StaticResource ContentTextStyle}" />
+                    <Label Text="• Creación de aplicaciones web con React y Node.js." Style="{StaticResource ContentTextStyle}" />
+                    <Label Text="• Desarrollo de interfaces de usuario y funcionalidades de frontend." Style="{StaticResource ContentTextStyle}" />
+                    <Label Text="• Colaboración con equipos multidisciplinarios." Style="{StaticResource ContentTextStyle}" />
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Sección de Educación -->
+            <StackLayout BackgroundColor="White" Padding="15" Margin="10">
+                <Label Text="EDUCACIÓN" Style="{StaticResource SectionTitleStyle}" />
+                <BoxView HeightRequest="1" BackgroundColor="Black" Margin="0,5,0,10" />
+                <StackLayout Margin="0,10,0,20">
+                    <Label Text="Licenciatura en Ingeniería de Software" Style="{StaticResource SubSectionTitleStyle}" />
+                    <Label Text="Universidad Politécnica de Madrid | 2014 - 2018" Style="{StaticResource ContentTextStyle}" />
+                </StackLayout>
+                <StackLayout Margin="0,10,0,20">
+                    <Label Text="Certificación en Desarrollo Web Full Stack" Style="{StaticResource SubSectionTitleStyle}" />
+                    <Label Text="Academia Digital Bootcamp | 2020" Style="{StaticResource ContentTextStyle}" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
